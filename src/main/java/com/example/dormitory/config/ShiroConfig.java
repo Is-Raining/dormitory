@@ -46,9 +46,9 @@ public class ShiroConfig {
         //filterMap.put("/user/update","authc");
         bean.setFilterChainDefinitionMap(filterMap);
          //设置登录的请求
-        bean.setLoginUrl("/Hello");
+        bean.setLoginUrl("/Unauthorized");
 
-        bean.setUnauthorizedUrl("/Hello");
+        bean.setUnauthorizedUrl("/Unauthorized");
         return bean;
 
     }

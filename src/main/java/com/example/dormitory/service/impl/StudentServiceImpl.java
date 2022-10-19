@@ -142,10 +142,13 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
 
 
         // 保存数据
-        resultVo.setCode(200);
-        resultVo.setMsg("修改成功");
-
-
+        if(studentMapper.updateById(student)!=0){
+            resultVo.setCode(200);
+            resultVo.setMsg("修改成功");
+            return resultVo;
+        };//修改数据库
+        resultVo.setCode(307);
+        resultVo.setMsg("修改失败");
         return resultVo;
     }
 

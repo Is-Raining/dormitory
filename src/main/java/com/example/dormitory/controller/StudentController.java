@@ -52,7 +52,7 @@ public class StudentController {
         return resultVo;
     }
 
-    @RequestMapping("/Hello")
+    @RequestMapping("/Unauthorized")
     public ResultVo unLogged(){
         return this.studentService.unLogged();
     }
@@ -60,9 +60,12 @@ public class StudentController {
     *退出登录
     **/
     @GetMapping("/logout")
-    public String logout() {
+    public ResultVo logout() {
         SecurityUtils.getSubject().logout();
-        return "redirect:/login";
+        ResultVo resultVo = new ResultVo();
+        resultVo.setCode(200);
+        resultVo.setMsg("成功登出");
+        return resultVo;
     }
 
     /**

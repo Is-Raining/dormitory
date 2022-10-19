@@ -1,5 +1,6 @@
 package com.example.dormitory.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -36,7 +37,8 @@ import lombok.EqualsAndHashCode;
     @TableField("Student_Sex")
     private String studentSex;
 
-    @TableField("Submit_Time")
+    //填充时间
+    @TableField(value = "Submit_Time",fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime submitTime;
 
     @TableField("Order_State")
